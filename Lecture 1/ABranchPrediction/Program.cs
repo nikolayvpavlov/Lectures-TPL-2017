@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 class Program
 {
-    static int dataSize = 10_000_000;
+    static int dataSize = 20_000_000;
     static int[] data;
 
     static void GenerateData()
@@ -21,9 +21,9 @@ class Program
         int result = 0;
         for (int i = 0; i < dataSize; i++)
         {
-            if (data[i] < boundary) result++;
+            //if (data[i] < boundary) result++;
             #region Alternative
-            //result = result - ((data[i] - boundary) >> 31);
+            result = result - ((data[i] - boundary) >> 31);
             #endregion
         }
         return result;
